@@ -69,19 +69,19 @@ def normalize_columns(df):
     # Define mapping priorities (lower case)
     mapping = {
         'order_id': ['order id', 'id', 'order_no', 'order number', 'order_name'],
-        'order_date': ['channel created at', 'created at', 'order date', 'date', 'timestamp', 'created_at'],
+        'order_date': ['channel created at', 'created at', 'order date', 'date', 'timestamp', 'created_at', 'order created at', 'clout order creation timestamp'],
         'order_status': ['status', 'order status', 'fulfillment status', 'financial status'],
         'payment_method': ['payment method', 'payment mode', 'type'],
         'product_name': ['product name', 'item name', 'title', 'lineitem name'],
         'sku': ['sku', 'variant sku', 'item sku', 'lineitem sku', 'product code', 'reference', 'model number', 'master sku'],
-        'state': ['shipping province', 'shipping state', 'state', 'province', 'shipping_address_province', 'customer state', 'billing state', 'region', 'destination state', 'state/province', 'state / province', 'shipping address state', 'address state'],
+        'state': ['shipping province', 'shipping state', 'state', 'province', 'shipping_address_province', 'customer state', 'billing state', 'region', 'destination state', 'state/province', 'state / province', 'shipping address state', 'address state', 'user state'],
         'gmv_amount': ['total', 'order total', 'gmv', 'amount', 'price', 'total_price'],
         'margin_amount': ['margin', 'profit', 'margin amount'],
         'margin_percent': ['margin %', 'margin percent', 'profit %'],
         'confirmation_status': ['confirmation status', 'is confirmed', 'tags'], # Tags often contain confirmation info
         'return_status': ['return status', 'return_state'],
         'sync_status': ['synced', 'is_synced', 'failed_to_sync'],
-        'channel': ['channel', 'source', 'platform']
+        'channel': ['channel', 'source', 'platform', 'shopify store name']
     }
 
     df.columns = df.columns.str.lower().str.strip()
